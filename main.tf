@@ -12,10 +12,13 @@ provider "google" {
   region         = var.region
 }
 
-module "network"{
+module "network" {
   source         = "./modules/network"
-
-  region         = var.region
-  project_id     = var.project_id
   network_name   = var.network_name
+}
+
+module "storage" {
+  source         = "./modules/storage"
+  bucket_name    = var.bucket_name
+  region         = var.region
 }
