@@ -22,3 +22,12 @@ module "storage" {
   bucket_name    = var.bucket_name
   region         = var.region
 }
+
+module "build" {
+  source         = "./modules/build"
+  project        = var.project_id
+  region         = var.region
+  backend_cloudbuild = var.backend_cloudbuild
+  github_owner      = var.github_owner
+  github_repo_name  = var.github_repo_name
+}
