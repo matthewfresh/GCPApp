@@ -25,7 +25,9 @@ module "storage" {
 
 module "build" {
   source         = "./modules/build"
-  project        = var.project_id
+  project_id     = var.project_id
+  branch_name    = var.branch_name
+  backend_repository_id = var.backend_repository_id
   region         = var.region
   backend_cloudbuild = var.backend_cloudbuild
   github_owner      = var.github_owner
